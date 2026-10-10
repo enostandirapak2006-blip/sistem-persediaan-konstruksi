@@ -7,6 +7,10 @@ Aplikasi web untuk mencatat persediaan material perusahaan kontraktor: pembelian
 
 > Tugas UTS Pengkodean dan Pemrograman — S1 Akuntansi
 
+**🔗 Web demo:** https://enostandirapak2006-blip.github.io/sistem-persediaan-konstruksi/
+
+*(Demo memakai database contoh bersama — data yang kamu tambahkan bisa dilihat pengunjung lain.)*
+
 | | |
 |---|---|
 | Nama | Enos Inzaghi Tandirapak |
@@ -306,6 +310,7 @@ sistem-persediaan-konstruksi/
 │       ├── utils.js    # format Rupiah & tanggal, pesan error, dll.
 │       ├── app.js      # pindah menu (single-page)
 │       └── ...         # satu file per menu (dashboard.js, pembelian.js, dst.)
+├── index.html          # pengalih untuk GitHub Pages -> frontend/html/index.html
 ├── .gitignore
 └── README.md
 ```
