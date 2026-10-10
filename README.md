@@ -9,10 +9,9 @@ Aplikasi web untuk mencatat persediaan material perusahaan kontraktor: pembelian
 
 | | |
 |---|---|
-| Nama | *(isi nama lengkap)* |
-| NIM | *(isi NIM)* |
-| Kelas | *(isi kelas)* |
-| Dosen | *(isi nama dosen)* |
+| Nama | Enos Inzaghi Tandirapak |
+| NIM | 12030124140335 |
+| Kelas | E |
 
 ---
 
