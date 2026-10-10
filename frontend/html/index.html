@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIPERKON — Sistem Persediaan Konstruksi</title>
+
+  <!-- Font IBM Plex Sans dari Google Fonts.
+       Dipilih karena angkanya bisa dibuat sama lebar (tabular) sehingga
+       kolom Rupiah rapi sejajar, dan karakternya teknis-industri. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
+
+  <!-- File CSS ada di folder frontend/css, jadi naik satu folder dulu (../) -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       SIDEBAR (menu kiri)
+       Setiap link memakai "#nama-menu". Saat diklik, alamat berubah
+       menjadi index.html#nama-menu, lalu app.js menampilkan halaman
+       yang sesuai TANPA pindah file (single-page).
+       ============================================================ -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-brand">
+      <span class="brand-logo">SP</span>
+      <div>
+        <strong>SIPERKON</strong>
+        <small>Persediaan &amp; Akuntansi Konstruksi</small>
+      </div>
+    </div>
+
+    <nav class="menu">
+      <p class="menu-grup">Utama</p>
+      <a href="#dashboard" data-menu="dashboard">Dashboard</a>
+
+      <p class="menu-grup">Data Master</p>
+      <a href="#material" data-menu="material">Material</a>
+      <a href="#supplier" data-menu="supplier">Supplier</a>
+      <a href="#proyek" data-menu="proyek">Proyek</a>
+
+      <p class="menu-grup">Transaksi</p>
+      <a href="#pembelian" data-menu="pembelian">Pembelian</a>
+      <a href="#pembayaran-utang" data-menu="pembayaran-utang">Pembayaran Utang</a>
+      <a href="#pemakaian" data-menu="pemakaian">Pemakaian Material</a>
+      <a href="#stok-opname" data-menu="stok-opname">Stok Opname</a>
+
+      <p class="menu-grup">Laporan</p>
+      <a href="#kartu-stok" data-menu="kartu-stok">Kartu Stok</a>
+      <a href="#jurnal-umum" data-menu="jurnal-umum">Jurnal Umum</a>
+      <a href="#buku-besar" data-menu="buku-besar">Buku Besar</a>
+      <a href="#laporan-persediaan" data-menu="laporan-persediaan">Laporan Persediaan</a>
+    </nav>
+
+    <p class="sidebar-kaki">Metode perpetual · rata-rata bergerak</p>
+  </aside>
+
+  <!-- Lapisan gelap di belakang sidebar saat dibuka di HP -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ============================================================
+       AREA UTAMA
+       ============================================================ -->
+  <main class="area-utama">
+    <header class="topbar">
+      <button class="tombol-menu" id="tombolMenu" aria-label="Buka menu">☰</button>
+      <div class="judul-wadah">
+        <!-- Kelompok menu, misalnya "Transaksi" (diisi oleh app.js) -->
+        <p class="judul-grup" id="grupHalaman">Utama</p>
+        <h1 id="judulHalaman">Dashboard</h1>
+      </div>
+      <span class="tanggal-hari-ini" id="tanggalHariIni"></span>
+    </header>
+
+    <!-- Isi halaman diganti-ganti oleh JavaScript -->
+    <section class="konten" id="konten"></section>
+  </main>
+
+  <!-- Tempat notifikasi kecil (toast) di pojok layar -->
+  <div class="toast-wadah" id="toastWadah"></div>
+
+  <!-- ============================================================
+       SCRIPT — URUTAN PENTING!
+       1. Library supabase-js dari CDN
+       2. supabase.js  (koneksi ke database)
+       3. utils.js     (fungsi bantu: format rupiah, tanggal, dll.)
+       4. file per menu
+       5. app.js       (mengatur pindah menu) — PALING TERAKHIR
+       ============================================================ -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="../js/supabase.js"></script>
+  <script src="../js/utils.js"></script>
+
+  <script src="../js/dashboard.js"></script>
+  <script src="../js/material.js"></script>
+  <script src="../js/supplier.js"></script>
+  <script src="../js/proyek.js"></script>
+  <script src="../js/pembelian.js"></script>
+  <script src="../js/pembayaran-utang.js"></script>
+  <script src="../js/pemakaian.js"></script>
+  <script src="../js/stok-opname.js"></script>
+  <script src="../js/kartu-stok.js"></script>
+  <script src="../js/jurnal-umum.js"></script>
+  <script src="../js/buku-besar.js"></script>
+  <script src="../js/laporan-persediaan.js"></script>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

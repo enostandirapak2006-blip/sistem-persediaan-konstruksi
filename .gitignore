@@ -1,0 +1,25 @@
+# =====================================================================
+# .gitignore — daftar file yang TIDAK ikut diunggah ke GitHub
+# =====================================================================
+
+# Pengaturan pribadi editor / Claude
+.vscode/
+.idea/
+.claude/
+
+# File sampah sistem operasi
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# File rahasia (jaga-jaga). Catatan: frontend/js/supabase.js TETAP
+# diunggah karena hanya berisi publishable/anon key yang memang publik.
+# JANGAN pernah menyimpan service_role / secret key di dalam proyek ini.
+.env
+.env.*
+*.secret
+
+# Log & file sementara
+*.log
+*.tmp
+node_modules/
